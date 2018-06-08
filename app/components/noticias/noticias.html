@@ -1,11 +1,10 @@
 <div>
   <p>Noticias</p>
 
-  <div>
-    <p>titulo</p>
-    <p>autor</p>
-    <img src="" alt="">
-    <p>mensagem</p>
-    <button>Excluir</button>
+  <div ng-repeat="notica in $ctrl.lista">
+    <p ng-bind="noticia.titulo"></p>
+    <p >{{ noticia.autor @ noticia.data }}</p>
+    <img src="noticia.imagem" alt="imagem">
+    <p ng-bind="noticia.mensagem"></p>
   </div>
 </div>

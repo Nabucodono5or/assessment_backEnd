@@ -1,7 +1,8 @@
 (function () {
-
+//<noticiascomp></noticiascomp>
+// app/app.html
 angular.module('myApp').component('app', {
-  templateUrl: 'app/app.html',
+  template: '<noticiascomp></noticiascomp>',
 });
 
 })();
