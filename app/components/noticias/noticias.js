@@ -1,5 +1,5 @@
 (function(){
-  angular.module('noticias',['ui.router']);
+  angular.module('noticias',['ui.router', 'ngMockE2E']);
 })();
 
 (function(){
@@ -15,14 +15,4 @@
 
   });
 
-  /*
-
-    $urlRouterProvider.otherwise('/noticias')
-
-    .state('noticias', {
-      url: '/noticias',
-      component: 'noticias'
-    })
-  
-  */
 })();
