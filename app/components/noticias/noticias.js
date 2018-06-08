@@ -1,5 +1,5 @@
 (function(){
-  angular.module('noticias',['ui.router', 'ngMockE2E']);
+  angular.module('noticias',['ui.router']);
 })();
 
 (function(){

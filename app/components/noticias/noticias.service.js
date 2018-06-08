@@ -1,6 +1,6 @@
 (function () {
   
-  angular.module('noticias').service('noticiasService', noticiasService);
+  //angular.module('noticias').service('noticiasService', noticiasService);
 
   function noticiasService($q,$http){
     vm = this;
