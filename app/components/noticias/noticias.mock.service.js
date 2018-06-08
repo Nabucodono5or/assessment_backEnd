@@ -1,6 +1,6 @@
 (function () {
 
-  //angular.module('noticias').service('noticiasMockService', noticiasMockService);
+  angular.module('noticias').service('noticiasMockService', noticiasMockService);
 
   function noticiasMockService() {
     this.lista = [

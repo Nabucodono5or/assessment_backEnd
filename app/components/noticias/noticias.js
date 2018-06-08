@@ -1,5 +1,5 @@
 (function(){
-  angular.module('noticias',['ui.router']);
+  angular.module('noticias',['ui.router', 'ngMockE2E']);//duvida? aqui será o suficiente?
 })();
 
 (function(){

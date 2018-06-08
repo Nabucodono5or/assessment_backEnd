@@ -1,6 +1,6 @@
 (function () {
   
-  //angular.module('noticias').run(noticiasRun);
+  angular.module('noticias').run(noticiasRun);
 
   function noticiasRun($httpBackend, noticiasMockService) {
     baseUrl = '/api/noticias';
