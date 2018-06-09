@@ -40,6 +40,10 @@
           console.log(err);
         });
       }else{
+        if(!this.noticia){
+          alert('Preencha o campo');
+          return
+        }
         this.noticia.id = this.lista.length+1;
         this.noticia.data = Date.now();
         noticiasService.add(this.noticia).then((response) => {
