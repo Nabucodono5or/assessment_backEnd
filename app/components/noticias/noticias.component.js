@@ -60,10 +60,9 @@
   angular.module('noticias').controller('noticiasController', noticiasController);
   noticiasController.$inject = ['noticiasService'];
 
-  //app/components/noticias/noticias.html
   angular.module('noticias').component('noticiascomp',{
     template: '<div><div ng-repeat="noticia in $ctrl.lista" ng-click="$ctrl.clicouNoticia(noticia)">'+'<p ng-bind="noticia.titulo"></p>'+
-    '<p ><span ng-bind="noticia.autor"></span>, <span ng-bind="noticia.data"></span></p>'
+    '<p ><span ng-bind="noticia.autor"></span>, <span>' + '{{ noticia.data | date }}'+' </span></p>'
     +'<img src="noticia.imagem" alt="imagem">'+'<p ng-bind="noticia.mensagem"></p>'+'</div>'+
     '<label for="">Titulo <input type="text" ng-model="$ctrl.noticia.titulo"> </label> <br>'
     +'<label for=""> Mensagem<textarea name="msg"  cols="30" rows="10" ng-model="$ctrl.noticia.mensagem"></textarea><br> </label>'
@@ -72,7 +71,7 @@
     +'{{$ctrl.editando ? "Atualizar" : "Adicionar"}}'
     +'</button>'
     +'<button ng-click="$ctrl.onDeleteButtonClicked()">'
-    +'{{$ctrl.editando ? "Deletar" : "Deletar Tudo"}}'
+    +'Deletar'
     +'</button> '
     +'</div>',
     controller: noticiasController
