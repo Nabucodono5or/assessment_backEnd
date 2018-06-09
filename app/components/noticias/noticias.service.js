@@ -13,7 +13,8 @@
 
     //para remover
     this.remove = (noticia) => {
-      return $http.delete(baseUrl+'/'+ noticia.id);
+      console.log(noticia.id);
+      return $http.delete(baseUrl);
     }
 
     //base de entrada
@@ -22,7 +23,7 @@
     }
     
     this.update = (noticia) => {
-      return $http.put(baseUrl+'/'+noticia.id);
+      return $http.put(baseUrl+'/'+noticia.id, noticia);
     }
 
   }

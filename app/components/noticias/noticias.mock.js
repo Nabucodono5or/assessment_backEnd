@@ -8,9 +8,11 @@
   
     $httpBackend.whenPOST('/api/noticias').respond(204, '');
 
-    $httpBackend.whenDELETE('/api/noticias'+'\d+').respond(204, '');
-  
-    $httpBackend.whenPUT('/api/noticias'+'\d+').respond(204, '');
+    $httpBackend.whenDELETE('/api/noticias').respond(function(method, url, data) {
+      return [200, '', {}];
+    });
+    
+    $httpBackend.whenPUT(/\/noticias\/(\d+)/).respond(204, '');
   }
 
 })();

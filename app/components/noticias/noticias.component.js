@@ -28,6 +28,8 @@
           console.log(err);
         });
       }else{
+        this.noticia.id = this.lista.length+1;
+        this.noticia.data = Date.now();
         noticiasService.add(this.noticia).then((response) => {
           this.carregarDados();
           console.log('sucesso');
