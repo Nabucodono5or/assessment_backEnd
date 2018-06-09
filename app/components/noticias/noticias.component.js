@@ -41,7 +41,7 @@
         });
       }else{
         if(!this.noticia){
-          alert('Preencha o campo');
+          //alert('Preencha o campo');
           return
         }
         this.noticia.id = this.lista.length+1;
