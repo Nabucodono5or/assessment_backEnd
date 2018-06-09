@@ -21,6 +21,10 @@
       return $http.get(baseUrl);
     }
     
+    this.update = (noticia) => {
+      return $http.put(baseUrl+'/'+noticia.id);
+    }
+
   }
 
 
