@@ -1,3 +1,3 @@
 (function () {
-  angular.module('common', ['form']);
+  angular.module('common', ['form', 'lista']);
 })();

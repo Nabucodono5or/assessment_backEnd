@@ -30,7 +30,7 @@
       console.log('evento ativado');
     }
 
-    // os botões talvez sejam substituídos
+    //
     this.onButtonClicked = () => {
       if(this.editando){
         noticiasService.update(this.noticia).then((response) => {
@@ -77,9 +77,7 @@
   noticiasController.$inject = ['noticiasService'];
 
   angular.module('noticias').component('noticiascomp',{
-    template: '<div><div ng-repeat="noticia in $ctrl.lista" ng-click="$ctrl.clicouNoticia(noticia)">'+'<p ng-bind="noticia.titulo"></p>'+
-    '<p ><span ng-bind="noticia.autor"></span>, <span>' + '{{ noticia.data | date }}'+' </span></p>'
-    +'<img src="noticia.imagem" alt="imagem">'+'<p ng-bind="noticia.mensagem"></p>'+'</div>'+
+    template: '<div><div ng-repeat="noticia in $ctrl.lista" ng-click="$ctrl.clicouNoticia(noticia)">'+'<listacomp noticia="noticia"></listacomp>'+'</div>'+
     '<formcomp noticia="$ctrl.noticia" editando="$ctrl.editando" on-change="$ctrl.change($event)" out="$ctrl.changeDeletar($event)"></formcomp>'+'</div>',
     controller: noticiasController
   });
