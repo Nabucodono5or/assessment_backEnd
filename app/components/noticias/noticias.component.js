@@ -1,5 +1,5 @@
 (function(){
-  function noticiasController(noticiasService) {
+  function noticiasController(noticiasService, $timeout) {
     this.carregarDados = () => {
       noticiasService.get().then((response) => {
         this.lista = response.data;
@@ -11,6 +11,7 @@
     this.$onInit = () => {
       this.editando = false;
       this.carregarDados();
+      this.alert = false;
     }
 
     this.clicouNoticia = (noticia) => {
@@ -41,7 +42,10 @@
         });
       }else{
         if(!this.noticia){
-          //alert('Preencha o campo');
+          this.alert = true;
+          $timeout( () => {
+            this.alert = false;
+          }, 2000);
           return
         }
         this.noticia.id = this.lista.length+1;
@@ -74,11 +78,12 @@
   }
 
   angular.module('noticias').controller('noticiasController', noticiasController);
-  noticiasController.$inject = ['noticiasService'];
+  noticiasController.$inject = ['noticiasService', '$timeout'];
 
   angular.module('noticias').component('noticiascomp',{
     template: '<div><div ng-repeat="noticia in $ctrl.lista" ng-click="$ctrl.clicouNoticia(noticia)">'+'<listacomp noticia="noticia"></listacomp>'+'</div>'+
-    '<formcomp noticia="$ctrl.noticia" editando="$ctrl.editando" on-change="$ctrl.change($event)" out="$ctrl.changeDeletar($event)"></formcomp>'+'</div>',
+    '<formcomp noticia="$ctrl.noticia" editando="$ctrl.editando" on-change="$ctrl.change($event)" out="$ctrl.changeDeletar($event)"></formcomp>'
+    +'<div ng-show="$ctrl.alert"> <p>Preencha os campos</p> </div>'+'</div>',
     controller: noticiasController
   });
 })();
