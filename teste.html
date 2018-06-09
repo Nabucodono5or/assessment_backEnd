@@ -1,0 +1,11 @@
+<div>
+  <label for="">Titulo <input type="text" ng-model="$ctrl.noticia.titulo"> </label> <br>
+  <label for="">Mensagem <textarea name="msg"  cols="30" rows="10" ng-model="$ctrl.noticia.mensagem"></textarea><br> </label>
+  <label for="">Autor<input type="text" ng-model="$ctrl.noticia.autor"></label>
+  <button ng-click="$ctrl.onButtonClicked()" >
+    {{$ctrl.editando ? 'Atualizar' : 'Adicionar'}}
+  </button>
+  <button ng-click="$ctrl.onDeleteButtonClicked()">
+      {{$ctrl.editando ? 'Deletar' : 'Deletar Tudo'}}
+    </button>   
+</div>
