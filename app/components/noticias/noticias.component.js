@@ -25,7 +25,10 @@
       this.onButtonClicked();
     }
 
-
+    this.changeDeletar = ($event) => {
+      this.onDeleteButtonClicked();
+      console.log('evento ativado');
+    }
 
     // os botões talvez sejam substituídos
     this.onButtonClicked = () => {
@@ -73,7 +76,7 @@
     template: '<div><div ng-repeat="noticia in $ctrl.lista" ng-click="$ctrl.clicouNoticia(noticia)">'+'<p ng-bind="noticia.titulo"></p>'+
     '<p ><span ng-bind="noticia.autor"></span>, <span>' + '{{ noticia.data | date }}'+' </span></p>'
     +'<img src="noticia.imagem" alt="imagem">'+'<p ng-bind="noticia.mensagem"></p>'+'</div>'+
-    '<formcomp noticia="$ctrl.noticia" editando="$ctrl.editando" on-change="$ctrl.change($event)"></formcomp>'+'</div>',
+    '<formcomp noticia="$ctrl.noticia" editando="$ctrl.editando" on-change="$ctrl.change($event)" out="$ctrl.changeDeletar($event)"></formcomp>'+'</div>',
     controller: noticiasController
   });
 })();

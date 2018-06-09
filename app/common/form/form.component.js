@@ -4,7 +4,8 @@
     bindings: {
       editando: '<',
       noticia: '<',
-      onChange: '&'
+      onChange: '&',
+      out: '&',
     },
     template: `<div class="">
       <form class="" action="index.html" method="post">
@@ -14,7 +15,11 @@
       </form>
       <button ng-click="$ctrl.onChange({ $event: {noticia: $ctrl.noticia} })">'
       {{$ctrl.editando ? "Atualizar" : "Adicionar"}}'
-      </button>'
+      </button>
+      <button ng-click="$ctrl.out({ $event: {noticia: $ctrl.noticia} })">'
+      Deletar'
+      </button>
+'
     </div>`,
   });
 
