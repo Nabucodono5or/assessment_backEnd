@@ -19,6 +19,15 @@
       this.editando = true;
     }
 
+    this.change = ($event) => {
+      this.noticia = $event.noticia;
+      console.log('evento ativado');
+      this.onButtonClicked();
+    }
+
+
+
+    // os botões talvez sejam substituídos
     this.onButtonClicked = () => {
       if(this.editando){
         noticiasService.update(this.noticia).then((response) => {
@@ -64,16 +73,7 @@
     template: '<div><div ng-repeat="noticia in $ctrl.lista" ng-click="$ctrl.clicouNoticia(noticia)">'+'<p ng-bind="noticia.titulo"></p>'+
     '<p ><span ng-bind="noticia.autor"></span>, <span>' + '{{ noticia.data | date }}'+' </span></p>'
     +'<img src="noticia.imagem" alt="imagem">'+'<p ng-bind="noticia.mensagem"></p>'+'</div>'+
-    '<label for="">Titulo <input type="text" ng-model="$ctrl.noticia.titulo"> </label> <br>'
-    +'<label for=""> Mensagem<textarea name="msg"  cols="30" rows="10" ng-model="$ctrl.noticia.mensagem"></textarea><br> </label>'
-    +'<label for="">Autor<input type="text" ng-model="$ctrl.noticia.autor"></label>'
-    +'<button ng-click="$ctrl.onButtonClicked()" >'
-    +'{{$ctrl.editando ? "Atualizar" : "Adicionar"}}'
-    +'</button>'
-    +'<button ng-click="$ctrl.onDeleteButtonClicked()">'
-    +'Deletar'
-    +'</button> '
-    +'</div>',
+    '<formcomp noticia="$ctrl.noticia" editando="$ctrl.editando" on-change="$ctrl.change($event)"></formcomp>'+'</div>',
     controller: noticiasController
   });
 })();
