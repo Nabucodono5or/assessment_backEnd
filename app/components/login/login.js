@@ -1,14 +1,22 @@
 (function () {
-  angular.module('login', ['ui.router','ngMockE2E']);
+  //'ui.router',
+  angular.module('login', ['ngMockE2E', 'ui.router']);
 })();
 
 (function () {
-  angular.module('login').config(function ($stateProvider) {
-    
-    $stateProvider.state('login', {
-      url: '/login',
-      component: 'logincomps'
-    });
+/*
 
+*/
+
+angular.module('login').config(function ($stateProvider) {
+  "ngInject";
+
+
+  $stateProvider.state('login', {
+    url: '/login',
+    component: 'logincomps'
   });
+
+});
+
 });
