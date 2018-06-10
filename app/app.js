@@ -1,6 +1,6 @@
 (function () {
 
-  angular.module('myApp', ['componentes', 'common', 'ui.router']);
+  angular.module('myApp', ['componentes', 'common', 'ui.router','ui.bootstrap', 'ngAnimate']);
 
 })();
 
@@ -18,7 +18,7 @@
       url: '/login',
       component: 'logincomps'
     });
-    
+
   });
 
 })();
