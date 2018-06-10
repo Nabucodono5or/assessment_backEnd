@@ -5,9 +5,6 @@
 
 (function () {
 /*
-
-*/
-
 angular.module('login').config(function ($stateProvider) {
   "ngInject";
 
@@ -18,5 +15,8 @@ angular.module('login').config(function ($stateProvider) {
   });
 
 });
+
+*/
+
 
 });

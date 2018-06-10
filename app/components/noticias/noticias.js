@@ -7,7 +7,6 @@
 
 /*
 
-*/
 angular.module('noticias').config(function($stateProvider, $urlRouterProvider) {
   "ngInject";
 
@@ -15,10 +14,13 @@ angular.module('noticias').config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider.state('noticias', {
     url: '/noticias',
-    //component: 'noticiascomps'
+    component: 'noticiascomp'
   });
 
 });
+
+
+*/
 
 
 })();

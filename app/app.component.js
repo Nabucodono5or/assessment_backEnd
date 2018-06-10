@@ -2,7 +2,7 @@
 //<noticiascomp></noticiascomp>
 // app/app.html
 angular.module('myApp').component('app', {
-  template: '<logincomps></logincomps>',
+  template: '<ui-view></ui-view>',
 });
 
 })();
