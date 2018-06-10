@@ -4,8 +4,7 @@
 
   function logiRun($httpBackend) {
 
-    //mockar?
-    $httpBackend.whenPOST('/login').respond(function(method, url, data) {
+    $httpBackend.whenPOST(/\/noticias/).respond(function(method, url, data) {
       if((data) && (data.login == "ceo" && data.senha == "123")){
         return [200, '', {}];
       }else{
