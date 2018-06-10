@@ -3,10 +3,6 @@
   function loginController(loginService) {
 
     this.erro = false;
-    this.credentials = {
-      login: '',
-      senha: '',
-    }
 
     this.login = (credentials) => {
       loginService.login(credentials).then((response)=>{

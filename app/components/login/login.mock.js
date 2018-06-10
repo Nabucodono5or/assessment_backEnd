@@ -3,14 +3,20 @@
   angular.module('login').run(logiRun);
 
   function logiRun($httpBackend) {
+
     //mockar?
-    let msCredentials = '';
-    $httpBackend.whenPOST('/login', msCredentials).respond(function(method, url, data) {
-      if(msCredentials.login == "" && msCredentials.senha == ""){
+    $httpBackend.whenPOST('/login').respond(function(method, url, data) {
+      if((data) && (data.login == "ceo" && data.senha == "123")){
         return [200, '', {}];
       }else{
         return [401, '', {}];
       }
     });
+
   }
+
+  /*
+
+
+  */
 })();
