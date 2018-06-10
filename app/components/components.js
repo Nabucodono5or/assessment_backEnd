@@ -1,3 +1,3 @@
 (function(){
-  angular.module('componentes', ['noticias']);
+  angular.module('componentes', ['noticias', 'login']);
 })();

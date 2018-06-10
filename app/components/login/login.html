@@ -1,0 +1,33 @@
+<div>
+  <form name="userForm" action="" method="post" novalidate>
+    <div>
+      <label for="identificacao">Login</label>
+    </div>
+
+    <div>
+      <input name="identificacao" type="text" ng-model="$ctrl.credentials.login">
+    </div>
+
+
+    <div>
+      <label for="senha">Senha</label>
+    </div>
+
+    <div>
+      <input name="senha" type="password" ng-model="$ctrl.credentials.senha">
+    </div>
+
+
+    <div>
+      <label for="lembrarCheck">
+          <input name="lembrarCheck" type="checkbox" ng-model="$ctrl.lembrar">
+          Lembrar login
+        </label>
+    </div>
+
+
+    <div>
+      <button type="submit" ng-click="">ACESSAR</button>
+    </div>
+  </form>
+</div>
