@@ -1,0 +1,25 @@
+.flutuarEsquerda {
+  float: right;
+  margin: 10px;
+}
+
+.semPadding{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.margensExtras {
+  margin: 10px;
+}
+
+.margensSuperExtras {
+  margin: 30px;
+}
+
+.margensAltura {
+  margin-top: 40px;
+}
+
+.margensAbaixo {
+  margin-bottom: 50px;
+}
