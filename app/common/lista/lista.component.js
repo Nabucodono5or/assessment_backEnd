@@ -3,8 +3,13 @@
     bindings: {
       noticia: '<'
     },
-    template: `<p ng-bind="$ctrl.noticia.titulo"></p>
-    <p ><span ng-bind="$ctrl.noticia.autor"></span> <span>  {{ $ctrl.noticia.data | date }} </span></p>
-    <img src="$ctrl.noticia.imagem" alt="imagem"><p ng-bind="$ctrl.noticia.mensagem"></p>`
+    template: `
+    <div class="panel panel-default">
+      <p class="panel-heading" ng-bind="$ctrl.noticia.titulo"></p>
+      <div class="panel-body">
+        <p ><span ng-bind="$ctrl.noticia.autor"></span> <span>  {{ $ctrl.noticia.data | date }} </span></p>
+        <img ng-src="{{ $ctrl.noticia.imagem }}" alt="imagem"><p ng-bind="$ctrl.noticia.mensagem"></p>
+      </div>
+    </div>`
   });
 })();
