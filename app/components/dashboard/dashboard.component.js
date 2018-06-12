@@ -1,7 +1,7 @@
 (function () {
 
   function dashboardController(dashboardService) {
-    this.carregarDados() = () => {
+    this.carregarDados = () => {
       dashboardService.get().then((response) => {
         this.lancamentos = response.data;
       }, (err) => {
@@ -15,11 +15,17 @@
 
   }
 
-  dashboardController.$inject = ['dashboardController'];
+  dashboardController.$inject = ['dashboardService'];
 
-  angular.module('dashboard'),controller('dashboardController',dashboardController);
+  angular.module('dashboard').controller('dashboardController',dashboardController);
+
   angular.module('dashboard').component('dashboardcomp', {
     controller : dashboardController,
-    template: ''
+    template: `
+    <div>
+      <div ng-repeat = "lancamento in $ctrl.lancamentos">
+        <p ng-model=lancamento.nome></p>
+      </div>
+    </div>`
   })
 })();

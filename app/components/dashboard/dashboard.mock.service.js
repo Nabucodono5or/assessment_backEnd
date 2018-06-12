@@ -1,6 +1,6 @@
 (function () {
 
-  angular.module().service('dashboardMockService', dashboardMockService);
+  angular.module('dashboard').service('dashboardMockService', dashboardMockService);
 
   function dashboardMockService() {
     this.lista = [];

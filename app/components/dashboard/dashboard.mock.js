@@ -2,7 +2,7 @@
   angular.module('dashboard').run(dashboardRun);
 
   function dashboardRun($httpBackend, dashboardMockService) {
-    baseUrl = '';
+    baseUrl = '/api/lancamentos';
 
     $httpBackend.whenGET(baseUrl).respond(dashboardMockService.lista);
   }

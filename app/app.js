@@ -17,6 +17,9 @@
     }).state('login', {
       url: '/login',
       component: 'logincomps'
+    }).state('dashboard', {
+      url: '/dashboard',
+      component: 'dashboardcomp'
     });
 
   });

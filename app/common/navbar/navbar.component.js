@@ -22,6 +22,7 @@
           <ul class="nav navbar-nav">
             <li ui-sref-active="active"><a ui-sref="noticias">Noticias</a></li>
             <li ui-sref-active="active"><a ui-sref="login">Login</a></li>
+            <li ui-sref-active="active"><a ui-sref="dashboard">Dashboard</a></li>
           </ul>
         </div>
       </div>
