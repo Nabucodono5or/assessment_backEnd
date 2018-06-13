@@ -9,12 +9,35 @@
       });
     }
 
+    this.dateFilter = (lancamento) => {
+      var d = new Date(lancamento.data);
+      console.log(d);
+      if(this.selectMes){
+        if(d.getMonth() == this.selectMes.valor) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
+
     this.$onInit = () => {
       this.lancamento = {};
       this.exibir = false;
       this.carregarDados();
-      this.filtroReceita = [true, false];
-      this.filtroMes = [];
+      this.filtroReceita = [{nome: "Pago", valor: true}, { nome: "Devendo", valor: false}];
+      this.filtroMes = [{nome: "Janeiro", valor: 0 },
+                        {nome: "Fevereiro", valor: 1 },
+                        {nome: "Março", valor: 2 },
+                        {nome: "Abril", valor: 3 },
+                        {nome: "Maio", valor: 4 },
+                        {nome: "Junho", valor: 5 },
+                        {nome: "Julho", valor: 6 },
+                        {nome: "Agosto", valor: 7 },
+                        {nome: "Setembro", valor: 8 },
+                        {nome: "Outubro", valor: 9 },
+                        {nome: "Novembro", valor: 10},
+                        {nome: "Dezembro", valor: 11}];
     }
 
     this.exibirDados = (lancamento) => {
@@ -33,10 +56,10 @@
     template: `
     <div>
     <div>
-      <select ng-model="selectReceita" ng-options="item for item in $ctrl.filtroReceita"></select>
-      <select ng-model="selectMes" ng-options=""></select>
+      <select ng-model="selectReceita" ng-options="item.nome for item in $ctrl.filtroReceita"></select>
+      <select ng-model="$ctrl.selectMes" ng-options="mes.nome for mes in $ctrl.filtroMes"></select>
     </div>
-    <div ng-repeat = "lancamento in $ctrl.lancamentos | filter: selectReceita">
+    <div ng-repeat = "lancamento in $ctrl.lancamentos | filter: { receita: selectReceita.valor } | filter: $ctrl.dateFilter ">
       <div ng-click="$ctrl.exibirDados(lancamento)">
         <div>
           <p>{{ lancamento.nome }} <span>{{ lancamento.categoria }}</span> </p>
