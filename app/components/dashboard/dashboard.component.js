@@ -11,8 +11,10 @@
 
     this.dateFilter = (lancamento) => {
       var d = new Date(lancamento.data);
-      console.log(d);
+
       if(this.selectMes){
+        if(this.selectMes.valor == 12){ return true };
+
         if(d.getMonth() == this.selectMes.valor) {
           return true;
         } else {
@@ -27,7 +29,8 @@
       this.exibir = false;
       this.carregarDados();
       this.filtroReceita = [{nome: "Pago", valor: true}, { nome: "Devendo", valor: false}];
-      this.filtroMes = [{nome: "Janeiro", valor: 0 },
+      this.filtroMes = [{nome: "Todos", valor: 12},
+                        {nome: "Janeiro", valor: 0 },
                         {nome: "Fevereiro", valor: 1 },
                         {nome: "Março", valor: 2 },
                         {nome: "Abril", valor: 3 },
