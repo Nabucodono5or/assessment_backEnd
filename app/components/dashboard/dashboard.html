@@ -1,0 +1,23 @@
+<div>
+  <div ng-repeat = "lancamento in $ctrl.lancamentos">
+    <div>
+      <p>{{ lancamento.nome }} <span>{{ lancamento.categoria }}</span> </p>
+    </div>
+    <div>
+      <p>{{ lancamento.data | date }}</p>
+      <p>Decrição: {{ lancamento.descricao }}</p>
+    </div>
+
+    <div>
+      <div>
+          <p>Valor: {{lancamento.valor}}</p>
+      </div>
+      <div>
+        <p>Pago : {{ lancamento.receita ? "Sim" : "Não" }} </p>
+      </div>
+      <div>
+        <p>Parcelas: {{ repetitividade }}</p>
+      </div>
+    </div>
+  </div>
+</div>

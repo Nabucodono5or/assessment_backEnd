@@ -1,3 +1,3 @@
 (function () {
-  angular.module('common', ['form', 'lista', 'navbar']);
+  angular.module('common', ['form', 'lista', 'navbar', 'tabela']);
 })();

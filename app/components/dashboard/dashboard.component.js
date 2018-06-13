@@ -23,9 +23,17 @@
     controller : dashboardController,
     template: `
     <div>
-      <div ng-repeat = "lancamento in $ctrl.lancamentos">
-        <p>{{ lancamento.nome }}</p>
+    <div ng-repeat = "lancamento in $ctrl.lancamentos">
+      <div>
+        <p>{{ lancamento.nome }} <span>{{ lancamento.categoria }}</span> </p>
       </div>
-    </div>`
+      <div>
+        <p>{{ lancamento.data | date }}</p>
+        <p>Decrição: {{ lancamento.descricao }}</p>
+      </div>
+  
+      <tabelacomp lancamento="lancamento"></tabelacomp>
+    </div>
+  </div>`
   })
 })();
