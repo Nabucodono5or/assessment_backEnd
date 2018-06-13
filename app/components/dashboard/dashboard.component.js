@@ -10,7 +10,14 @@
     }
 
     this.$onInit = () => {
+      this.lancamento = {};
+      this.exibir = false;
       this.carregarDados();
+    }
+
+    this.exibirDados = (lancamento) => {
+      this.exibir = true;
+      this.lancamento = lancamento;
     }
 
   }
@@ -24,15 +31,18 @@
     template: `
     <div>
     <div ng-repeat = "lancamento in $ctrl.lancamentos">
-      <div>
-        <p>{{ lancamento.nome }} <span>{{ lancamento.categoria }}</span> </p>
+      <div ng-click="$ctrl.exibirDados(lancamento)">
+        <div>
+          <p>{{ lancamento.nome }} <span>{{ lancamento.categoria }}</span> </p>
+        </div>
+        <div>
+          <p>{{ lancamento.data | date }}</p>
+          <p>Decrição: {{ lancamento.descricao }}</p>
+        </div>
       </div>
-      <div>
-        <p>{{ lancamento.data | date }}</p>
-        <p>Decrição: {{ lancamento.descricao }}</p>
-      </div>
-  
-      <tabelacomp lancamento="lancamento"></tabelacomp>
+    </div>
+    <div ng-show="$ctrl.exibir">
+    <tabelacomp lancamento="$ctrl.lancamento"></tabelacomp>
     </div>
   </div>`
   })

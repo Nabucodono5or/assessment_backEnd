@@ -13,7 +13,7 @@
         <p>Pago : {{ $ctrl.lancamento.receita ? "Sim" : "Não" }} </p>
       </div>
       <div>
-        <p>Parcelas: {{ $ctrl.repetitividade }}</p>
+        <p>Parcelas: {{ $ctrl.lancamento.repetitividade }}</p>
       </div>
   </div>
 `
