@@ -19,6 +19,7 @@
           return false;
         }
       }
+      return true;
     }
 
     this.$onInit = () => {
