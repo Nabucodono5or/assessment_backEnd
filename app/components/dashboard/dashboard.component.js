@@ -13,6 +13,7 @@
       this.lancamento = {};
       this.exibir = false;
       this.carregarDados();
+      this.filtroReceita = [true, false];
     }
 
     this.exibirDados = (lancamento) => {
@@ -30,7 +31,10 @@
     controller : dashboardController,
     template: `
     <div>
-    <div ng-repeat = "lancamento in $ctrl.lancamentos">
+    <div>
+      <select ng-model="selectReceita" ng-options="item for item in $ctrl.filtroReceita"></select>
+    </div>
+    <div ng-repeat = "lancamento in $ctrl.lancamentos | filter: selectReceita">
       <div ng-click="$ctrl.exibirDados(lancamento)">
         <div>
           <p>{{ lancamento.nome }} <span>{{ lancamento.categoria }}</span> </p>
