@@ -61,13 +61,16 @@
     controller : dashboardController,
     template: `
     <div>
-      <div>
-        <select ng-model="selectReceita" ng-options="item.nome for item in $ctrl.filtroReceita"></select>
-        <select ng-model="$ctrl.selectMes" ng-options="mes.nome for mes in $ctrl.filtroMes" ng-change="$ctrl.calculoTotalGasto()"></select>
+      <div class="row">
+        <div class= "panel panel-default col-sm-5">
+          <select class="" ng-model="selectReceita" ng-options="item.nome for item in $ctrl.filtroReceita"></select>
+          <select class="" ng-model="$ctrl.selectMes" ng-options="mes.nome for mes in $ctrl.filtroMes" ng-change="$ctrl.calculoTotalGasto()"></select>
+        </div>
       </div>
-      <div ng-repeat = "lancamento in $ctrl.lancamentos | filter: { receita: selectReceita.valor } | filter: $ctrl.dateFilter ">
-        <div ng-click="$ctrl.exibirDados(lancamento)">
-          <div>
+
+      <div class="row" ng-repeat ="lancamento in $ctrl.lancamentos | filter: { receita: selectReceita.valor } | filter: $ctrl.dateFilter ">
+        <div class="panel panel-info col-sm-5" uib-popover="{{ lancamento.nome }}" ng-click="$ctrl.exibirDados(lancamento)">
+          <div class="">
             <p>{{ lancamento.nome }} <span>{{ lancamento.categoria }}</span> </p>
           </div>
           <div>
@@ -75,9 +78,12 @@
             <p>Decrição: {{ lancamento.descricao }}</p>
           </div>
         </div>
+
       </div>
-      <div ng-show="$ctrl.exibir">
-      <tabelacomp lancamento="$ctrl.lancamento"></tabelacomp>
+      <div class="row">
+        <div class="panel panel-default col-sm-5" ng-show="$ctrl.exibir">
+        <tabelacomp lancamento="$ctrl.lancamento"></tabelacomp>
+      </div>
       </div>
   </div>`
   })
