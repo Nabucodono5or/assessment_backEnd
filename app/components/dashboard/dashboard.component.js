@@ -14,6 +14,7 @@
       this.exibir = false;
       this.carregarDados();
       this.filtroReceita = [true, false];
+      this.filtroMes = [];
     }
 
     this.exibirDados = (lancamento) => {
@@ -33,6 +34,7 @@
     <div>
     <div>
       <select ng-model="selectReceita" ng-options="item for item in $ctrl.filtroReceita"></select>
+      <select ng-model="selectMes" ng-options=""></select>
     </div>
     <div ng-repeat = "lancamento in $ctrl.lancamentos | filter: selectReceita">
       <div ng-click="$ctrl.exibirDados(lancamento)">
