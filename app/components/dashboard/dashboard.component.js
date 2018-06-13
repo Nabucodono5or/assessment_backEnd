@@ -9,9 +9,6 @@
       });
     }
 
-    this.calculoTotalGasto = () => {
-    }
-
 
     this.dateFilter = (lancamento) => {
       var d = new Date(lancamento.data);
@@ -64,9 +61,6 @@
     controller : dashboardController,
     template: `
     <div>
-      <div>
-        <p ng-show="selectReceita.valor"> Total gasto: {{ $ctrl.totalGasto }}</p>
-      </div>
       <div>
         <select ng-model="selectReceita" ng-options="item.nome for item in $ctrl.filtroReceita"></select>
         <select ng-model="$ctrl.selectMes" ng-options="mes.nome for mes in $ctrl.filtroMes" ng-change="$ctrl.calculoTotalGasto()"></select>
