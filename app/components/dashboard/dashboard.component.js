@@ -24,7 +24,7 @@
     template: `
     <div>
       <div ng-repeat = "lancamento in $ctrl.lancamentos">
-        <p ng-model=lancamento.nome></p>
+        <p>{{ lancamento.nome }}</p>
       </div>
     </div>`
   })
