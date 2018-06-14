@@ -1,5 +1,9 @@
 body {
-  
+
+}
+
+.posicao-mobile{
+  left: 100%;
 }
 
 .flutuarEsquerda {
@@ -7,9 +11,14 @@ body {
   margin: 10px;
 }
 
+.sem-mergin{
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
 .semPadding{
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 0%;
+  padding-right: 0%;
 }
 
 .margensExtras {

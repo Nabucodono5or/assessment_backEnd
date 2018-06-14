@@ -60,9 +60,9 @@
   angular.module('dashboard').component('dashboardcomp', {
     controller : dashboardController,
     template: `
-    <div>
-      <div class="row">
-        <div class= "panel panel-default panel-bg col-sm-5 col-xs-12">
+    <div class="margensSuperExtras">
+      <div class="row posicao-mobile">
+        <div class= "panel panel-default panel-bg col-sm-5 col-xs-11">
           <select class="margensExtras" ng-model="selectReceita" ng-options="item.nome for item in $ctrl.filtroReceita"></select>
           <select class="margensExtras" ng-model="$ctrl.selectMes" ng-options="mes.nome for mes in $ctrl.filtroMes" ng-change="$ctrl.calculoTotalGasto()"></select>
         </div>
@@ -85,7 +85,7 @@
 
       </div>
       <div class="row">
-        <div class="panel panel-default panel-bg-extra margensExtras col-sm-5 col-xs-12" ng-show="$ctrl.exibir">
+        <div class="panel panel-default panel-bg-extra margensExtras col-sm-5 col-xs-10" ng-show="$ctrl.exibir">
         <tabelacomp lancamento="$ctrl.lancamento"></tabelacomp>
       </div>
       </div>
