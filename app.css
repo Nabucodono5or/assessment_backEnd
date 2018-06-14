@@ -1,3 +1,7 @@
+body {
+  
+}
+
 .flutuarEsquerda {
   float: right;
   margin: 10px;
@@ -22,4 +26,31 @@
 
 .margensAbaixo {
   margin-bottom: 50px;
+}
+
+.panel-bg-extra{
+  padding: 10px;
+  background-color: #41B030;
+  color: #ffffff;
+}
+
+.panel-bg {
+  background-color: #E9FCDC;
+}
+
+.text-data {
+  color: #3B025A;
+}
+
+.text-titulo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  color: #FF8C00;
+}
+
+.text-subtitulo {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1em;
+  margin-left: 38px;
+  color: #843D9B;
 }
