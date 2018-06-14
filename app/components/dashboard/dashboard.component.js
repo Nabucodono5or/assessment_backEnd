@@ -62,14 +62,16 @@
     template: `
     <div>
       <div class="row">
-        <div class= "panel panel-default panel-bg col-sm-5">
+        <div class= "panel panel-default panel-bg col-sm-5 col-xs-12">
           <select class="margensExtras" ng-model="selectReceita" ng-options="item.nome for item in $ctrl.filtroReceita"></select>
           <select class="margensExtras" ng-model="$ctrl.selectMes" ng-options="mes.nome for mes in $ctrl.filtroMes" ng-change="$ctrl.calculoTotalGasto()"></select>
         </div>
       </div>
 
-      <div class="row" ng-repeat ="lancamento in $ctrl.lancamentos | filter: { receita: selectReceita.valor } | filter: $ctrl.dateFilter ">
-        <div class="panel panel-info panel-bg col-sm-5" uib-popover="{{ lancamento.nome }}" ng-click="$ctrl.exibirDados(lancamento)">
+      <div class="row">
+      <div class="col-sm-5 col-xs-12">
+      <div class="" ng-repeat ="lancamento in $ctrl.lancamentos | filter: { receita: selectReceita.valor } | filter: $ctrl.dateFilter ">
+        <div class="panel panel-info panel-bg" uib-popover="{{ lancamento.nome }}" ng-click="$ctrl.exibirDados(lancamento)">
           <div class="">
             <p class="text-titulo">{{ lancamento.nome }} <span class="text-subtitulo">{{ lancamento.categoria }}</span> </p>
           </div>
@@ -80,10 +82,14 @@
         </div>
 
       </div>
-      <div class="">
-        <div class="panel panel-default panel-bg-extra col-sm-5" ng-show="$ctrl.exibir">
+
+      </div>
+      <div class="row">
+        <div class="panel panel-default panel-bg-extra margensExtras col-sm-5 col-xs-12" ng-show="$ctrl.exibir">
         <tabelacomp lancamento="$ctrl.lancamento"></tabelacomp>
       </div>
+      </div>
+
       </div>
   </div>`
   })
