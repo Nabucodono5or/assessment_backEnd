@@ -3,7 +3,7 @@
   angular.module('navbar').component('navbarcomp',{
     template: `<nav class="navbar navbar-default navbar-static-top navbar-fixed-top main-navigation"
          tooltip-placement="bottom-left"
-         uib-tooltip="Navbar - container-fluid" ng-init="$ctrl.isNavBarCollapsed = true">
+         uib-tooltip="Barra principal" ng-init="$ctrl.isNavBarCollapsed = true">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button"

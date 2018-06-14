@@ -22,8 +22,8 @@
     controller: loginController,
     template:`
     <div>
-    <div class="row margensAltura">
-      <div class="panel panel-primary col-sm-6 col-sm-offset-3 margin-top">
+    <div class="row margensAltura posicao-mobile">
+      <div class="panel panel-primary col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 margin-top">
         <form class="margensSuperExtras" name="userForm" action="" method="post" novalidate>
           <div class="text-warning" ng-show="$ctrl.erro">
             <p>Erro de autenticação</p>
