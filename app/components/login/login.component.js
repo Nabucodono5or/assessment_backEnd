@@ -23,7 +23,7 @@
     template:`
     <div>
     <div class="row margensAltura">
-      <div class="panel panel-primary col-sm-6 col-sm-offset-3">
+      <div class="panel panel-primary col-sm-6 col-sm-offset-3 margin-top">
         <form class="margensSuperExtras" name="userForm" action="" method="post" novalidate>
           <div class="text-warning" ng-show="$ctrl.erro">
             <p>Erro de autenticação</p>
@@ -51,7 +51,7 @@
             <button class="btn btn-primary" type="submit" ng-click="$ctrl.login(credentials)">ACESSAR</button>
           </div>
         </form>
-      </div>  
+      </div>
     </div>
     </div>
 `,

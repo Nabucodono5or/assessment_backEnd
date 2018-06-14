@@ -1,7 +1,7 @@
 (function () {
 
   angular.module('navbar').component('navbarcomp',{
-    template: `<nav class="navbar navbar-default navbar-static-top "
+    template: `<nav class="navbar navbar-default navbar-static-top navbar-fixed-top"
          tooltip-placement="bottom-left"
          uib-tooltip="Navbar - container-fluid" ng-init="$ctrl.isNavBarCollapsed = true">
       <div class="container-fluid">
@@ -20,9 +20,9 @@
              class="navbar-collapse collapse"
              uib-collapse="$ctrl.isNavBarCollapsed">
           <ul class="nav navbar-nav">
-            <li ui-sref-active="active"><a ui-sref="noticias">Noticias</a></li>
-            <li ui-sref-active="active"><a ui-sref="login">Login</a></li>
-            <li ui-sref-active="active"><a ui-sref="dashboard">Dashboard</a></li>
+            <li ui-sref-active="active"><a ui-sref="noticias" class="text-titulo">Noticias</a></li>
+            <li ui-sref-active="active"><a class="text-titulo" ui-sref="login">Login</a></li>
+            <li ui-sref-active="active"><a class="text-titulo" ui-sref="dashboard">Dashboard</a></li>
           </ul>
         </div>
       </div>

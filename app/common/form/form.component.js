@@ -8,9 +8,9 @@
       out: '&',
     },
     template: `
-    <div class="row margensAltura margensAbaixo">
+    <div class="row margensAltura margensAbaixo panel-bg-form padding-extra">
       <div class="panel panel-default col-sm-6 col-sm-offset-3">
-        <h3>Adicione noticias ou as edite como quiser:</h3>      
+        <h3>Adicione noticias ou as edite como quiser:</h3>
         <form name="noticiaForm" class="form-horizontal margensExtras" action="index.html" method="post" novalidate>
             <div class="from-group">
               <label for="titulo" class="">Titulo <input type="text" class="form-control" name="titulo" ng-model="$ctrl.noticia.titulo" required> </label>

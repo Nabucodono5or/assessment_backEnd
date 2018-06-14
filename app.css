@@ -1,5 +1,9 @@
 body {
+  background-color: #b4c4ae;
+}
 
+.margin-top {
+  margin-top: 80px;
 }
 
 .posicao-mobile{
@@ -44,7 +48,16 @@ body {
 }
 
 .panel-bg {
-  background-color: #E9FCDC;
+  background-color: #f6f6f6;
+}
+
+.padding-extra{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.panel-bg-form{
+  background-color: #065143;
 }
 
 .text-data {
