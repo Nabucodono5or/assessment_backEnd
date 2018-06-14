@@ -8,7 +8,6 @@
 
     $httpBackend.whenPOST('/api/noticias').respond(function(method, url, data) {
          var newNoticia = angular.fromJson(data);
-         console.log(data);
          noticiasMockService.lista.push(newNoticia);
 
         return [200, newNoticia, {}];
