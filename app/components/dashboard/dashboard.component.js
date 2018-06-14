@@ -62,7 +62,7 @@
     template: `
     <div class="margensSuperExtras">
       <div class="row posicao-mobile margin-top">
-        <div class= "panel panel-default panel-bg col-sm-5 col-xs-11">
+        <div class= "panel panel-default panel-bg box-shadow-panel col-sm-5 col-xs-11">
           <select class="margensExtras" ng-model="selectReceita" ng-options="item.nome for item in $ctrl.filtroReceita"></select>
           <select class="margensExtras" ng-model="$ctrl.selectMes" ng-options="mes.nome for mes in $ctrl.filtroMes" ng-change="$ctrl.calculoTotalGasto()"></select>
         </div>
@@ -71,7 +71,7 @@
       <div class="row">
       <div class="col-sm-5 col-xs-12">
       <div class="" ng-repeat ="lancamento in $ctrl.lancamentos | filter: { receita: selectReceita.valor } | filter: $ctrl.dateFilter ">
-        <div class="panel panel-info panel-bg" uib-popover="{{ lancamento.nome }}" ng-click="$ctrl.exibirDados(lancamento)">
+        <div class="panel panel-info panel-bg box-shadow-panel" uib-tooltip="{{ lancamento.nome }}" ng-click="$ctrl.exibirDados(lancamento)">
           <div class="">
             <p class="text-titulo">{{ lancamento.nome }} <span class="text-subtitulo">{{ lancamento.categoria }}</span> </p>
           </div>
