@@ -1,7 +1,6 @@
 (function () {
 
   function categoriasController(categoriasService) {
-    this.categorias = categoriasService.get()
 
     this.carregarCategorias = () => {
       categoriasService.get().then((response) => {
@@ -11,8 +10,14 @@
       });
     }
 
-    this.adicionarCategorias = () => {
+    this.adicionarCategorias = (categoria) => {
+      this.categoria.id = this.categorias.length+1;
+      categoriasService.add(categoria).then((response) => {
+      this.carregarCategorias();
 
+      }, (err) => {
+        console.log(err);
+      });
     }
 
     this.$onInit = () => {
@@ -34,11 +39,11 @@
           <form class="" action="index.html" method="post">
           <div class="form-group">
             <label for="buscarcategorias">Buscar categorias
-              <input class="margensExtras" type="text" name="buscarcategorias" value="" ng-model="$ctrl.buscaCat">
+              <input class="margensExtras" type="text" name="buscarcategorias" value="" ng-model="buscaCat">
             </label>
           </div>
 
-          <div class="panel panel-default" ng-repeat="categoria in $ctrl.categorias | filter: $ctrl.buscaCat">
+          <div class="panel panel-default" ng-repeat="categoria in $ctrl.categorias | filter:buscaCat track by $index">
             <p>{{ categoria.nome }}</p>
           </div>
 
@@ -54,18 +59,18 @@
         <form class="" action="index.html" method="post">
           <div class="form-group margensExtras">
             <label for="nome">Nome da categoria
-              <input class="form-control" type="text" name="nome" value="">
+              <input ng-model="$ctrl.categoria.nome" class="form-control" type="text" name="nome" value="">
             </label>
           </div>
 
           <div class="form-group margensExtras">
-            <label for="desc">Descição da categoria
+            <label for="desc" ng-model="$ctrl.categoria.descricao">Descição da categoria
               <textarea class="form-control" name="desc" rows="8" cols="80"></textarea>
             </label>
           </div>
         </form>
 
-        <button class="btn btn-info margensExtras" type="button" name="salvar">Salvar</button>
+        <button class="btn btn-info margensExtras" type="button" name="salvar" ng-click="$ctrl.adicionarCategorias($ctrl.categoria)" >Salvar</button>
       </div>
 
       </div>
