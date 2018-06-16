@@ -42,7 +42,7 @@
 
   }
 
-  lancamentosController.$inject = ['categoriasService'];
+  lancamentosController.$inject = ['categoriasService', 'dashboardService'];
   angular.module('lancamentos').controller('lancamentosController', lancamentosController)
 
   angular.module('lancamentos').component('lancamentoscomp', {
