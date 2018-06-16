@@ -24,6 +24,7 @@
             <li ui-sref-active="active"><a class="text-titulo" ui-sref="login">Login</a></li>
             <li ui-sref-active="active"><a class="text-titulo" ui-sref="dashboard">Dashboard</a></li>
             <li ui-sref-active="active"><a ui-sref="lancamentos" class="text-titulo">Lançamentos</a></li>
+            <li ui-sref-active="active"><a ui-sref="categorias" class="text-titulo">Categorias</a></li>
           </ul>
         </div>
       </div>

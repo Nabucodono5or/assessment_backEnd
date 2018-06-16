@@ -23,6 +23,9 @@
     }).state('lancamentos', {
       url: '/lancamentos',
       component: 'lancamentoscomp'
+    }).state('categorias', {
+      url: '/categorias',
+      component: 'categoriascomp'
     });
 
   });

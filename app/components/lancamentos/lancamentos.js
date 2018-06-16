@@ -1,4 +1,4 @@
 (function () {
-  angular.module('lancamentos', []);
+  angular.module('lancamentos', ['ui.router']);
 
 })();
