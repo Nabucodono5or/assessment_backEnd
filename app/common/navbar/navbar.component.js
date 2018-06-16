@@ -23,6 +23,7 @@
             <li ui-sref-active="active"><a ui-sref="noticias" class="text-titulo">Noticias</a></li>
             <li ui-sref-active="active"><a class="text-titulo" ui-sref="login">Login</a></li>
             <li ui-sref-active="active"><a class="text-titulo" ui-sref="dashboard">Dashboard</a></li>
+            <li ui-sref-active="active"><a ui-sref="lancamentos" class="text-titulo">Lançamentos</a></li>
           </ul>
         </div>
       </div>

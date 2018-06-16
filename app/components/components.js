@@ -1,3 +1,3 @@
 (function(){
-  angular.module('componentes', ['noticias','login', 'dashboard']);
+  angular.module('componentes', ['noticias','login', 'dashboard', 'lancamentos']);
 })();

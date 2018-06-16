@@ -20,6 +20,9 @@
     }).state('dashboard', {
       url: '/dashboard',
       component: 'dashboardcomp'
+    }).state('lancamentos', {
+      url: '/lancamentos',
+      component: 'lancamentoscomp'
     });
 
   });
