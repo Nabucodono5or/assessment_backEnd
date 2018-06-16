@@ -1,10 +1,28 @@
 (function () {
 
   function categoriasController(categoriasService) {
+    this.categorias = categoriasService.get()
+
+    this.carregarCategorias = () => {
+      categoriasService.get().then((response) => {
+        this.categorias = response.data;
+      }, (err) => {
+        console.log(err);
+      });
+    }
+
+    this.adicionarCategorias = () => {
+
+    }
+
+    this.$onInit = () => {
+      this.carregarCategorias();
+    }
+
 
   }
 
-  categoriasController.$inject = [];
+  categoriasController.$inject = ['categoriasService'];
   angular.module('categorias').controller( 'categoriasController', categoriasController)
 
   angular.module('categorias').component('categoriascomp', {
@@ -16,12 +34,12 @@
           <form class="" action="index.html" method="post">
           <div class="form-group">
             <label for="buscarcategorias">Buscar categorias
-              <input class="margensExtras" type="text" name="buscarcategorias" value="">
+              <input class="margensExtras" type="text" name="buscarcategorias" value="" ng-model="$ctrl.buscaCat">
             </label>
           </div>
 
-          <div class="panel panel-default">
-            <p></p>
+          <div class="panel panel-default" ng-repeat="categoria in $ctrl.categorias | filter: $ctrl.buscaCat">
+            <p>{{ categoria.nome }}</p>
           </div>
 
           <div class="">
