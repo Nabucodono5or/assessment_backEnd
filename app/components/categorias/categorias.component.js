@@ -14,6 +14,7 @@
       this.categoria.id = this.categorias.length+1;
       categoriasService.add(categoria).then((response) => {
       this.carregarCategorias();
+      delete this.categoria;
 
       }, (err) => {
         console.log(err);
@@ -56,21 +57,21 @@
       <div class="row">
       <div class="panel panel-info col-sm-8 col-sm-offset-2">
         <h3>Cadastre uma nova categoria</h3>
-        <form class="" action="index.html" method="post">
+        <form class="" name="categoriaForm" action="index.html" method="post" novalidate>
           <div class="form-group margensExtras">
             <label for="nome">Nome da categoria
-              <input ng-model="$ctrl.categoria.nome" class="form-control" type="text" name="nome" value="">
+              <input ng-model="$ctrl.categoria.nome" class="form-control" type="text" name="nome" required>
             </label>
           </div>
 
           <div class="form-group margensExtras">
-            <label for="desc" ng-model="$ctrl.categoria.descricao">Descição da categoria
-              <textarea class="form-control" name="desc" rows="8" cols="80"></textarea>
+            <label for="desc">Descição da categoria
+              <textarea class="form-control" name="desc" rows="8" cols="80" ng-model="$ctrl.categoria.descricao" required></textarea>
             </label>
           </div>
         </form>
 
-        <button class="btn btn-info margensExtras" type="button" name="salvar" ng-click="$ctrl.adicionarCategorias($ctrl.categoria)" >Salvar</button>
+        <button class="btn btn-info margensExtras" type="button" name="salvar" ng-disabled="categoriaForm.$invalid" ng-click="$ctrl.adicionarCategorias($ctrl.categoria)" >Salvar</button>
       </div>
 
       </div>
