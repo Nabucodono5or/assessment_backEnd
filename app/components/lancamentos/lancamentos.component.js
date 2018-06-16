@@ -1,11 +1,18 @@
 (function () {
-  function lancamentosController(categoriasService) {
+  function lancamentosController(categoriasService, dashboardService) {
     //ainda para ser testado
-    this.adicionarLancamentos = (lancamento) => {
-      lancamento.valor = this.valor;
-      lancamento.repetitividade = this.repetitividade;
-      lancamento.receita = this.receita.nome;
-      lancamento.categoria = this.categoria.nome;
+    this.adicionarLancamentos = (lancamento) => {//lancamento ou this.lancamento
+      this.lancamento.valor = this.valor;
+      this.lancamento.repetitividade = this.repetitividade;
+      this.lancamento.receita = this.receita.nome;
+      this.lancamento.categoria = this.categoria.nome;
+
+      dashboardService.add(this.lancamento).then((response) => {
+        delete this.lancamento; //será que vai dar certo?
+        console.log('sucesso');
+      }, (err) => {
+        console.log(err);
+      });
     }
 
     this.carregarCategorias = () => {
