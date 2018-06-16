@@ -1,4 +1,4 @@
 (function () {
-  angular.module('lancamentos', ['ui.router']);
+  angular.module('lancamentos', ['ui.router','categorias']);
 
 })();

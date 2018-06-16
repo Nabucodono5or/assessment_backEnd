@@ -8,5 +8,10 @@
     this.get = () => {
       return $http.get(baseUrl);
     }
+
+    this.add =  (lancamento) => {
+      return $http.post(baseUrl, lancamento);
+    }
+
   }
 })();
