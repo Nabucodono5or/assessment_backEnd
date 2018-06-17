@@ -3,7 +3,19 @@
   function loginController(loginService) {
 
     this.erro = false;
+    this.credentialsValidas = false;
 
+    this.login = (credentials) => {
+      this.validas = loginService.login(credentials);
+      if(this.validas){
+
+        this.erro = false;
+      }else{
+        this.erro = true;
+      }
+    }
+
+    /*
     this.login = (credentials) => {
       loginService.login(credentials).then((response)=>{
         console.log('sucesso');
@@ -11,7 +23,10 @@
         this.erro = true;
         console.log("erro");
       });
-    }
+    }    
+    */
+
+
   }
 
   loginController.$inject = ['loginService'];
