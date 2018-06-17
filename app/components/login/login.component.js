@@ -5,27 +5,18 @@
     this.erro = false;
     this.credentialsValidas = false;
 
-    this.login = (credentials) => {
-      this.validas = loginService.login(credentials);
-      if(this.validas){
+    this.login = () => {
+      if(this.credentials){
 
-        this.erro = false;
-      }else{
-        this.erro = true;
-      }
+        this.validas = loginService.login(this.credentials);
+        if(this.validas){
+
+          this.erro = false;
+        }else{
+          this.erro = true;
+        }
+      }    
     }
-
-    /*
-    this.login = (credentials) => {
-      loginService.login(credentials).then((response)=>{
-        console.log('sucesso');
-      }, (err) => {
-        this.erro = true;
-        console.log("erro");
-      });
-    }    
-    */
-
 
   }
 
@@ -62,10 +53,12 @@
               </label>
           </div>
 
-          <div>
-            <button class="btn btn-primary" type="submit" ng-click="$ctrl.login(credentials)">ACESSAR</button>
-          </div>
         </form>
+
+        <div class="margensExtras">
+          <button class="btn btn-primary" ng-click="$ctrl.login()">ACESSAR</button>
+        </div>
+
       </div>
     </div>
     </div>

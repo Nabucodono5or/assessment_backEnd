@@ -1,5 +1,17 @@
 (function () {
 
+  /*
+  function navbarControler(loginService){
+    this.exibirPaginas = loginService.sessao_usuario;
+
+    this.sairLogin = loginService.sessao_usuario = false;
+  }
+  
+  */
+
+  //navbarControler.$inject = ['loginService'];
+  //angular.module('navbar').controller('navbarControler', navbarControler);
+
   angular.module('navbar').component('navbarcomp',{
     template: `<nav class="navbar navbar-default navbar-static-top navbar-fixed-top main-navigation"
          tooltip-placement="bottom-left"

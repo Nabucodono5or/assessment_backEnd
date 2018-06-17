@@ -1,3 +1,3 @@
 (function () {
-  angular.module('navbar', ['ui.router']);
+  angular.module('navbar', ['ui.router', 'login']);
 })();

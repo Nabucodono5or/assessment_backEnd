@@ -98,14 +98,15 @@
             </label>
             <!-- parcelas -->
           </div>
+  
+        </form>
 
-          <div>
+        <div>
           <button class="btn btn-info margensExtras" ng-click="$ctrl.adicionarLancamentos($ctrl.lancamento)">
             Salvar
           </button>
         </div>
-  
-        </form>
+
       </div>
     </div>
 `
