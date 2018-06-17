@@ -4,11 +4,11 @@
     this.adicionarLancamentos = (lancamento) => {//lancamento ou this.lancamento
       this.lancamento.valor = this.valor;
       this.lancamento.repetitividade = this.repetitividade;
-      this.lancamento.receita = this.receita.nome;
+      this.lancamento.receita = this.receita.valor;
       this.lancamento.categoria = this.categoria.nome;
 
       dashboardService.add(this.lancamento).then((response) => {
-        delete this.lancamento; //será que vai dar certo?
+        //delete this.lancamento; //será que vai dar certo?
         console.log('sucesso');
       }, (err) => {
         console.log(err);
@@ -93,12 +93,18 @@
           </div>
 
           <div class="form-group">
-            <label for="">Parcelas
+            <label for="parcelas">Parcelas
               <input type="number" name="parcelas" ng-model="$ctrl.lancamento.repeticoes">
             </label>
             <!-- parcelas -->
           </div>
 
+          <div>
+          <button class="btn btn-info margensExtras" ng-click="$ctrl.adicionarLancamentos($ctrl.lancamento)">
+            Salvar
+          </button>
+        </div>
+  
         </form>
       </div>
     </div>
