@@ -37,14 +37,14 @@
       <div class="row">
         <div class="margin-top panel panel-info col-sm-8 col-sm-offset-2">
           <h3>Busque uma categoria</h3>
-          <form class="" action="index.html" method="post">
+          <form class="" name="buscarForm" action="index.html" method="post">
           <div class="form-group">
             <label for="buscarcategorias">Buscar categorias
               <input class="margensExtras" type="text" name="buscarcategorias" value="" ng-model="buscaCat">
             </label>
           </div>
-
-          <div class="panel panel-default" ng-repeat="categoria in $ctrl.categorias | filter:buscaCat track by $index">
+ 
+          <div ng-show="buscaCat != '' && !buscarForm.$pristine" class="panel panel-default" ng-repeat="categoria in $ctrl.categorias | filter:buscaCat track by $index">
             <p>{{ categoria.nome }}</p>
           </div>
 
