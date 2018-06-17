@@ -8,6 +8,7 @@
 
     $httpBackend.whenPOST('/api/lancamentos').respond(function(method, url, data) {
          var newLancamento = angular.fromJson(data);
+         console.log(newLancamento);
          dashboardMockService.lista.push(newLancamento);
 
         return [200, newLancamento, {}];

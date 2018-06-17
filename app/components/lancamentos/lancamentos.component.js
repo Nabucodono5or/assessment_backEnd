@@ -6,9 +6,21 @@
       this.lancamento.repetitividade = this.repetitividade;
       this.lancamento.receita = this.receita.valor;
       this.lancamento.categoria = this.categoria.nome;
+      this.lancamento.data = Date.now();
+
+      this.alerts = [];
+
+      this.addAlert = () => {
+        this.alerts.push({msg: 'Dados salvo com sucesso'});
+      };
+
+      this.closeAlert = (index) => {
+        this.alerts.splice(index, 1);
+      };
 
       dashboardService.add(this.lancamento).then((response) => {
-        //delete this.lancamento; //será que vai dar certo?
+        this.addAlert();
+        delete this.lancamento; //será que vai dar certo?
         console.log('sucesso');
       }, (err) => {
         console.log(err);
@@ -60,7 +72,7 @@
 
           <div class="form-group">
             <label for="menssagem">Menssagem
-              <textarea class="form-control" name="menssagem" rows="8" cols="80" ng-model="$ctrl.lancamento.menssagem"></textarea>
+              <textarea class="form-control" name="menssagem" rows="8" cols="80" ng-model="$ctrl.lancamento.descricao"></textarea>
             </label>
             <!-- menssagem -->
           </div>
@@ -107,9 +119,13 @@
           </button>
         </div>
 
+        <div uib-alert ng-repeat="alert in $ctrl.alerts" ng-class="'alert-' + (alert.type || 'warning')" close="$ctrl.closeAlert($index)">
+          {{alert.msg}}
+        </div>
+
       </div>
     </div>
 `
-  })
+  });
 
 })();
