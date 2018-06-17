@@ -17,7 +17,26 @@
       return [200, '', {}];
     });
 
-    $httpBackend.whenPUT(/\/noticias\/(\d+)/).respond(204, '');
+    $httpBackend.whenPUT(/\/noticias\/(\d+)/).respond(function(method, url, data) {
+      var newNoticia = angular.fromJson(data);
+      console.log(newNoticia);
+      let i = this.encontreDadosPorId(newNoticia.id);
+      noticiasMockService.lista[i] = newNoticia;
+      return [200, '', {}];
+    });
+
+
+    this.encontreDadosPorId = (id) => {
+      var listaPercorrida = noticiasMockService.lista;
+
+      for(i = 0; i < listaPercorrida.length; i++){
+        if(listaPercorrida.id == id){
+          return i;
+        }
+      }
+    }
+
+
   }
 
 })();
