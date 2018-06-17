@@ -8,6 +8,17 @@
       this.lancamento.categoria = this.categoria.nome;
       this.lancamento.data = Date.now();
 
+      dashboardService.add(this.lancamento).then((response) => {
+        this.addAlert();
+        delete this.lancamento; //será que vai dar certo?
+        console.log('sucesso');
+      }, (err) => {
+        console.log(err);
+      });
+    }
+
+      // codigo para replicar xxxxxxxxxxxxxxxxxxxxxxxxx
+      // sucesso yyyyyyyyyyyyyyyyyyyy
       this.alerts = [];
 
       this.addAlert = () => {
@@ -18,14 +29,18 @@
         this.alerts.splice(index, 1);
       };
 
-      dashboardService.add(this.lancamento).then((response) => {
-        this.addAlert();
-        delete this.lancamento; //será que vai dar certo?
-        console.log('sucesso');
-      }, (err) => {
-        console.log(err);
-      });
-    }
+      //erros yyyyyyyyyyyyyyyyyyyy
+      this.erros = [];
+
+      this.addErros = () => {
+        this.erros.push({msg: 'Erro ao salvar os dados'});
+      }
+
+      this.closeErros = (index) => {
+        this.erros.splice(index, 1);
+      }
+      // cofigo para replicar xxxxxxxxxxxxxxxxxxxxxxxxxx
+
 
     this.carregarCategorias = () => {
       categoriasService.get().then((response) => {
@@ -119,10 +134,14 @@
           </button>
         </div>
 
-        <div uib-alert ng-repeat="alert in $ctrl.alerts" ng-class="'alert-' + (alert.type || 'warning')" close="$ctrl.closeAlert($index)">
+        <div uib-alert ng-repeat="alert in $ctrl.alerts" ng-class="'alert-' + (alert.type || 'success')" close="$ctrl.closeAlert($index)">
           {{alert.msg}}
         </div>
 
+        <div uib-alert ng-repeat="erro in $ctrl.erros" ng-class="'alert-' + (erro.type || 'warning')" close="$ctrl.closeErros($index)">
+          {{erro.msg}}
+        </div>
+        
       </div>
     </div>
 `
