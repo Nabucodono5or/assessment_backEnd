@@ -13,6 +13,7 @@
         delete this.lancamento; //será que vai dar certo?
         console.log('sucesso');
       }, (err) => {
+        this.addErros();
         console.log(err);
       });
     }

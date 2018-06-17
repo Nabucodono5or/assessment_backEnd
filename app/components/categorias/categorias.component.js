@@ -10,13 +10,39 @@
       });
     }
 
+      // codigo para replicar xxxxxxxxxxxxxxxxxxxxxxxxx
+      // sucesso yyyyyyyyyyyyyyyyyyyy
+      this.alerts = [];
+
+      this.addAlert = () => {
+        this.alerts.push({msg: 'Dados salvo com sucesso'});
+      };
+
+      this.closeAlert = (index) => {
+        this.alerts.splice(index, 1);
+      };
+
+      //erros yyyyyyyyyyyyyyyyyyyy
+      this.erros = [];
+
+      this.addErros = () => {
+        this.erros.push({msg: 'Erro ao salvar os dados'});
+      }
+
+      this.closeErros = (index) => {
+        this.erros.splice(index, 1);
+      }
+      // cofigo para replicar xxxxxxxxxxxxxxxxxxxxxxxxxx
+
     this.adicionarCategorias = (categoria) => {
       this.categoria.id = this.categorias.length+1;
       categoriasService.add(categoria).then((response) => {
-      this.carregarCategorias();
-      delete this.categoria;
+        this.carregarCategorias();
+        this.addAlert();
+        delete this.categoria;
 
       }, (err) => {
+        this.addErros();
         console.log(err);
       });
     }
@@ -72,10 +98,17 @@
         </form>
 
         <button class="btn btn-info margensExtras" type="button" name="salvar" ng-disabled="categoriaForm.$invalid" ng-click="$ctrl.adicionarCategorias($ctrl.categoria)" >Salvar</button>
-      </div>
+        <div uib-alert ng-repeat="alert in $ctrl.alerts" ng-class="'alert-' + (alert.type || 'success')" close="$ctrl.closeAlert($index)">
+         {{alert.msg}}
+        </div>
+
+        <div uib-alert ng-repeat="erro in $ctrl.erros" ng-class="'alert-' + (erro.type || 'warning')" close="$ctrl.closeErros($index)">
+          {{erro.msg}}
+        </div>
 
       </div>
     </div>
+  </div>
 `
   });
 
