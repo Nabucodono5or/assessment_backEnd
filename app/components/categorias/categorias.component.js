@@ -59,9 +59,9 @@
 
   angular.module('categorias').component('categoriascomp', {
     controller: categoriasController,
-    template: `<div class="margensExtras">
-      <div class="row">
-        <div class="margin-top panel panel-info col-sm-8 col-sm-offset-2">
+    template: `<div class="margensExtras semPadding">
+      <div class="row semPadding">
+        <div class="margin-top panel panel-info col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
           <h3>Busque uma categoria</h3>
           <form class="" name="buscarForm" action="index.html" method="post">
           <div class="form-group">
@@ -80,8 +80,8 @@
           </form>
         </div>
       </div>
-      <div class="row">
-      <div class="panel panel-info col-sm-8 col-sm-offset-2">
+      <div class="row semPadding">
+      <div class="panel panel-info col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
         <h3>Cadastre uma nova categoria</h3>
         <form class="" name="categoriaForm" action="index.html" method="post" novalidate>
           <div class="form-group margensExtras">

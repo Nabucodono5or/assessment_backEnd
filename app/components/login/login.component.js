@@ -37,13 +37,13 @@
 
           <div class="form-group">
             <label for="identificacao">Login</label><br>
-            <input name="identificacao" type="text" ng-model="$ctrl.credentials.login">
+            <input class="col-xs-11" name="identificacao" type="text" ng-model="$ctrl.credentials.login">
           </div>
 
 
           <div>
             <label for="senha">Senha</label><br>
-            <input name="senha" type="password" ng-model="$ctrl.credentials.senha">
+            <input class="col-xs-11" name="senha" type="password" ng-model="$ctrl.credentials.senha">
           </div>
 
           <div class="checkbox">
